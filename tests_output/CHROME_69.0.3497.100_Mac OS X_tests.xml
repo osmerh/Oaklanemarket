@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="4">
+
+  <testsuite name="tests"
+    errors="0" failures="1" hostname="" id="" package="tests" skipped="3"
+    tests="4" time="132.2" timestamp="Wed, 26 Sep 2018 17:03:34 GMT">
+  
+    <testcase name="Sign In" classname="tests" time="132.2" assertions="1">  <failure message="Timed out while waiting for element &lt;a[class=&#34;soundest-form-without-image-close &#34;]&gt; to be present for 5000 milliseconds.">    at Object.Sign In (/Users/osmerhchichia/Desktop/DevMtn/Oaklanemarket/tests/tests.js:19:10)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+  
+    
+    <testcase
+      name="Search Item" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Compare Items" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Cart" classname="tests">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>
