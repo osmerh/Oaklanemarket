@@ -1,86 +1,56 @@
+var signIn = require('../test-assets/signInpage')
+var invalidSignIn = require('../test-assets/invalidSignIn')
+var compare = require('../test-assets/compare')
+var cart = require('../test-assets/cart')
+var cart2 = require('../test-assets/cart2')
 var searchItem = require('../test-assets/searchItem')
+var searchItem2 = require('../test-assets/searchItem2')
 var testData = require('../test-assets/testData')
 var oak = ''
-
+//Test Plan https://dmutah.atlassian.net/browse/Q7O-66
 module.exports = {
     beforeEach: browser => {
         oak = browser.page.pages()
-        // oak.navigate()
-            browser.url('http://oaklanemarket.com/')
-            // oak.waitForElementVisible('@popUp', 5000)
-            // .click('@popUp')
-            // .api.pause(1000)
+        oak.navigate()
     },
     after: browser => {
         browser.end()
-    },
+    },//https://dmutah.atlassian.net/browse/Q7O-75
+    'Invalid Sign In': browser => {
+        invalidSignIn(oak, testData.invalidSignIn)
+        oak
+            .expect.element('@emailInvalid').text.to.contain('Please use a valid email address, such as user@example.com.').before(5000)
+    },//https://dmutah.atlassian.net/browse/Q7O-76
     'Sign In': browser => {
+        signIn(oak, testData.validSignIn)
         oak
-        .waitForElementVisible('@popUp', 5000)
-        .click('@popUp')
-        .api.pause(1000)
-        oak
-        // .waitForElementVisible('@signIn', 5000)
-        .click('@signIn')
-        .setValue('@email', 'osmerhchichia@hotmail.com')
-        .setValue('@password', 'osmerh11')
-        .click('@signInButton')
-        .expect.element('@header').text.to.contain('Orders').before(5000)
-
-    },
+            .expect.element('@header').text.to.contain('Orders').before(5000)
+    },//https://dmutah.atlassian.net/browse/Q7O-77
     'Search Item': browser => {
         searchItem(oak, testData.validSearch)
         oak
-        .expect.element('@header').text.to.contain('2 results for').before(5000)
-    },
+            .expect.element('@header').text.to.contain('2 results for').before(5000)
+    },//https://dmutah.atlassian.net/browse/Q7O-78
+    'Search Item2': browser => {
+        searchItem2(oak, testData.invalidSearch)
+        oak
+            .expect.element('@header').text.to.contain('0 results for').before(5000)
+    },//https://dmutah.atlassian.net/browse/Q7O-79
     'Compare Items': browser => {
         oak
-        .click('@shopAll')
-        .waitForElementVisible('@header', 5000)
-        .api.pause(1000)
+        compare(oak, testData)
         oak
-        .click('@andyTop')
-        .click('@floralTop')
-        .click('@compare')
-        .expect.element('@header').text.to.contain('Comparing 2 Products')
-    },
+            .expect.element('@header').text.to.contain('Comparing 2 Products')
+    },// The following links cover the automations test for both 'Cart' and 'Cart2'
+    //https://dmutah.atlassian.net/browse/Q7O-70
     'Cart': browser => {
+        cart(oak, testData)
         oak
-        .click('@tops')
-        .waitForElementVisible('@header', 5000)
-        .api.pause(1000)
+            .expect.element('@header').text.to.contain('Your Cart (0 items)')
+    },
+    'Cart2': browser => {
+        cart2(oak, testData)
         oak
-        .waitForElementVisible('@crochetTop', 5000)
-        .click('@crochetTop')
-        .waitForElementVisible('@header',5000)
-        .api.pause(1000)
-        oak
-        .click('@large')
-        .click('@addToCart')
-        .waitForElementVisible('@productDetails', 5000)
-        .api.pause(1000)
-        oak
-        .click('@closeX')
-        .waitForElementVisible('@header', 5000)
-        .api.pause(1000)
-        oak
-        .click('cartButton')
-        .click('@viewCart')
-        .waitForElementVisible('@header', 5000)
-        .api.pause(1000)
-        oak
-        .click('@deleteItem')
-        .click('@okButton')
-        .expect.element('@header').text.to.contain('Your Cart (0 items)').before(5000)
-        // .click('@tops')
-        // waitForElementVisible('@header', 5000)
-        // .click('@aidenTop')
-
-
-
-
-
-
-    }
-
+            .expect.element('@header').text.to.contain('Your Cart (1 item)')
+    },
 }

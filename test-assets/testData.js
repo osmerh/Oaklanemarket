@@ -1,26 +1,23 @@
-module.export = {
-    validSignIn: [
+module.exports = {
+    validSignIn: 
         {
             email: 'osmerhchichia@hotmail.com',
             password: 'osmerh11',
-        }
-    ],
-    invalidSignIn: [
+        },
+    invalidSignIn: 
         {
             email: 'abc',
             password: '123',
-        }
-    ],
-    validSearch: [
+        },
+    validSearch: 
         {
             searchBar: 'pants',
             header: '2 results for',
-        }
-    ],
-    invalidSearch: [
+        },
+    invalidSearch: 
         {
             searchBar: 'dogs',
             header: '0 results for',
         }
-    ]
+    
 }

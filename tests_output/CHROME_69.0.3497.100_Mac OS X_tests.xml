@@ -1,13 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="1"
-            tests="4">
+            failures="0"
+            tests="7">
 
   <testsuite name="tests"
-    errors="0" failures="1" hostname="" id="" package="tests" skipped="3"
-    tests="4" time="132.2" timestamp="Wed, 26 Sep 2018 17:03:34 GMT">
+    errors="0" failures="0" hostname="" id="" package="tests" skipped="0"
+    tests="7" time="60.31" timestamp="Fri, 28 Sep 2018 01:34:19 GMT">
   
-    <testcase name="Sign In" classname="tests" time="132.2" assertions="1">  <failure message="Timed out while waiting for element &lt;a[class=&#34;soundest-form-without-image-close &#34;]&gt; to be present for 5000 milliseconds.">    at Object.Sign In (/Users/osmerhchichia/Desktop/DevMtn/Oaklanemarket/tests/tests.js:19:10)</failure>
+    <testcase name="Invalid Sign In" classname="tests" time="10.26" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Sign In" classname="tests" time="5.042" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Search Item" classname="tests" time="3.398" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Search Item2" classname="tests" time="2.558" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="Compare Items" classname="tests" time="4.420" assertions="2">
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Cart" classname="tests" time="15.43" assertions="9">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="Cart2" classname="tests" time="19.19" assertions="11">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     </testcase>
@@ -15,23 +85,6 @@
 
   
 
-  
-    
-    <testcase
-      name="Search Item" classname="tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Compare Items" classname="tests">
-      <skipped />
-    </testcase>
-    
-    <testcase
-      name="Cart" classname="tests">
-      <skipped />
-    </testcase>
-    
   
   </testsuite>
 </testsuites>

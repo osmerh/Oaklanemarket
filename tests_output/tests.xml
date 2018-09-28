@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="1"
             failures="0"
-            tests="2">
+            tests="5">
 
   <testsuite name="tests"
-    errors="1" failures="0" hostname="" id="" package="tests" skipped="1"
-    tests="2" time="0.009000" timestamp="Tue, 25 Sep 2018 20:50:12 GMT">
+    errors="1" failures="0" hostname="" id="" package="tests" skipped="4"
+    tests="5" time="0.01200" timestamp="Thu, 27 Sep 2018 17:15:46 GMT">
   
-    <testcase name="Sign In" classname="tests" time="0.009000" assertions="0">
+    <testcase name="Invalid Sign In" classname="tests" time="0.01200" assertions="0">
     </testcase>
   
 
   
     <system-err>
-        Error while running [Tests / Sign In]:
+        Error while running [Tests / Invalid Sign In]:
 
   TypeError: Cannot read property &#39;expect&#39; of undefined
-    at Object.Sign In (/Users/osmerhchichia/Desktop/DevMtn/Oaklanemarket/tests/tests.js:20:9)
+    at Object.Invalid Sign In (/Users/osmerhchichia/Desktop/DevMtn/Oaklanemarket/tests/tests.js:20:9)
     at Module.call (/usr/local/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
     at /usr/local/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
     at _fulfilled (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
@@ -32,7 +32,22 @@
   
     
     <testcase
+      name="Sign In" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
       name="Search Item" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Compare Items" classname="tests">
+      <skipped />
+    </testcase>
+    
+    <testcase
+      name="Cart" classname="tests">
       <skipped />
     </testcase>
     
